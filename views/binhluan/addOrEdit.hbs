@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-6 offset-md-3" style="background-color:#fff; margin-top: 25px; padding: 20px;">
 <h3>{{viewTitle}}</h3>
-<form action="/sach" method="POST" autocomplete="off" enctype="multipart/form-data">
+<form action="/sach" method="POST" autocomplete="off" >
     <input type="hidden" name="_id" value="{{sach._id}}">
     <div class="form-group">
         <label>Tên Sách</label>
@@ -52,15 +52,10 @@
         <div class="text-danger">
             {{sach.fullNameError}}</div>
     </div>
-    <div class="form-group">
-        <label>Hình</label>
-        <input type="file" class="form-control" name="image">
-        <div class="text-danger">
-            {{sach.fullNameError}}</div>
-    </div>
 
     <div class="form-group">
         <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/employee/list"><i class="fa fa-list-alt"></i> View All</a>
     </div>
 </form>
 </div>

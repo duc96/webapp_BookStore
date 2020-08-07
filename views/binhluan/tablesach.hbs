@@ -37,11 +37,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/main">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Quản lý sách</div>
+                <div class="sidebar-brand-text mx-3">ADMIN</div>
             </a>
 
             <!-- Divider -->
@@ -49,9 +49,9 @@
 
             <!-- Nav Item - Main -->
             <li class="nav-item active">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/main">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Danh mục</span></a>
+                    <span>Main</span></a>
             </li>
 
             <!-- Divider -->
@@ -65,7 +65,7 @@
             <!-- Nav Item - item quản lý người dùng -->
             <li class="nav-item">
 
-                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="/main" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Quản lý người dùng</span>
@@ -73,8 +73,12 @@
 
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Quản lý người dùng</h6>
-                        <a class="collapse-item" href="/nguoidung">DS Người dùng</a>
+                        <h6 class="collapse-header">Quản lý người dùng:</h6>
+                        <a class="collapse-item" href="#">Users mới</a>
+                        <a class="collapse-item" href="#">Top users</a>
+                        <!-- <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a> -->
                     </div>
                 </div>
             </li>
@@ -90,21 +94,73 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sách</h6>
-                        <a class="collapse-item" href="/sach">List sách</a>
+                        <a class="collapse-item" href="/sach">Loại sách</a>
+                        <a class="collapse-item" href="/sach">Tag</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Utilities thống kê -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/hoadon">
+                <a class="nav-link collapsed">
+                    <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="true"
+          aria-controls="collapseTwo"> -->
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Thống kê</span>
                 </a>
+                <!-- <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Thống kê Sách:</h6>
+            <a class="collapse-item" href="#">Sách tồn kho</a>
+            <a class="collapse-item" href="#">Sách bán chạy</a>
+            <a class="collapse-item" href="#">Sách đọc nhiều</a>
+            <a class="collapse-item" href="#">Sách cho mượn</a>
+            <a class="collapse-item" href="#">Sách sale</a>
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div> -->
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="/login">Login</a>
+                        <a class="collapse-item" href="/repassword">Repassword</a>
+                        <a class="collapse-item" href="/forgotpassword">Forgot Password</a>
+                        <!-- <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="#">404 Page</a>
+            <a class="collapse-item" href="#">Blank Page</a> -->
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Chi tiết sách</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -332,14 +388,14 @@
                 <!-- Begin Page Content -->
                 <div class="container">
                     <div class="card img-fluid" style="width:1200px">
-                        <img class="card-img-top" src="../image/pkl4.jpg" alt="Card image" style="opacity:0.5">
+                        <img class="card-img-top" src="../image/book.jpg" alt="Card image" style="opacity:0.5">
                         <div class="card-img-overlay">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     {{!-- <h6 class="m-0 font-weight-bold text-primary">Tất cả sách</h6> --}}
                                     <h3><a class="btn btn-secondary" href="/sach/addOrEdit"><i class="fa fa-plus"></i>
                                             Create
-                                            New</a>DS Người Dùng</h3>
+                                            New</a> Sách List</h3>
 
 
                                 </div>
@@ -349,35 +405,41 @@
                                             cellspacing="0">
                                             <thead>
                                                 <tr>
-                                                    <th>Tên ND</th>
-                                                    <th>Password</th>
-                                                    <th>Email</th>
-                                                    <th>SDT</th>
-                                                    <th>Số Dư TK</th>
+                                                    <th>tên sách</th>
+                                                    <th>tên loại</th>
+                                                    <th>tác giả</th>
+                                                    <th>nhà xuất bản</th>
+                                                    <th>tái bản</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {{#each nguoidungs}}
+                                                {{#each sachs}}
+
                                                 <tr>
+
                                                     <td>
-                                                        <a>
-                                                            {{tenNguoiDung}}
+                                                        <a href="/sach/{{this._id}}">
+                                                            {{tenSach}}
                                                         </a>
                                                     </td>
-                                                    <td>{{email}}</td>
-                                                    <td>{{matKhau}}</td>
-                                                    <td>{{sdt}}</td>
-                                                    <td>{{soDu}}</td>
+
+                                                    <td>{{tenLoai}}</td>
+                                                    <td>{{tacGia}}</td>
+                                                    <td>{{nhaXuatBan}}</td>
+                                                    <td>{{taiBan}}</td>
+
                                                     <td>
-                                                        <a href=""><i class="fas fa-pen" aria-hidden="true"></i></a>
-                                                        &nbsp; &nbsp;
-                                                        <a href=""
+                                                        <a href="/sach/update/{{this._id}}"><i class="fas fa-pen"
+                                                                aria-hidden="true"></i></a> &nbsp; &nbsp;
+                                                        <a href="/sach/delete/{{this._id}}"
                                                             onclick="return confirm('Are you sure to delete this record ?');"><i
                                                                 class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                                                     </td>
                                                 </tr>
+
                                                 {{/each}}
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -569,7 +631,6 @@
     <!-- Page level custom scripts -->
     <script src="../js/demo/datatables-demo.js"></script>
 
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>

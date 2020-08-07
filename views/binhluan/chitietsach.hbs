@@ -34,11 +34,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/main">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Quản lý Sách</div>
+        <div class="sidebar-brand-text mx-3">ADMIN</div>
       </a>
 
       <!-- Divider -->
@@ -46,9 +46,9 @@
 
       <!-- Nav Item - Main -->
       <li class="nav-item active">
-        <a class="nav-link" href="/">
+        <a class="nav-link" href="/main">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Danh mục</span></a>
+          <span>Main</span></a>
       </li>
 
       <!-- Divider -->
@@ -62,7 +62,7 @@
       <!-- Nav Item - item quản lý người dùng -->
       <li class="nav-item">
 
-        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
           aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Quản lý người dùng</span>
@@ -70,23 +70,28 @@
 
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Quản lý người dùng</h6>
-            <a class="collapse-item" href="/nguoidung">DS Người dùng</a>
+            <h6 class="collapse-header">Quản lý người dùng:</h6>
+            <a class="collapse-item" href="#">Users mới</a>
+            <a class="collapse-item" href="#">Top users</a>
+            <!-- <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a> -->
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Utilities quản lý sách -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
-          aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Quản lý Sách</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Sách</h6>
-            <a class="collapse-item" href="/sach">List Sách</a>
+            <a class="collapse-item" href="/sach/tablesach">Loại sách</a>
+            <a class="collapse-item" href="/sach/tablesach">Tag</a>
           </div>
         </div>
       </li>
@@ -94,13 +99,64 @@
       <!-- Nav Item - Utilities thống kê -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="/hoadon">
+          <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="true"
+          aria-controls="collapseTwo"> -->
           <i class="fas fa-fw fa-cog"></i>
-          <span>Thống kê</span>
+          <span>Hoa don</span>
         </a>
+        <!-- <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Thống kê Sách:</h6>
+            <a class="collapse-item" href="#">Sách tồn kho</a>
+            <a class="collapse-item" href="#">Sách bán chạy</a>
+            <a class="collapse-item" href="#">Sách đọc nhiều</a>
+            <a class="collapse-item" href="#">Sách cho mượn</a>
+            <a class="collapse-item" href="#">Sách sale</a>
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div> -->
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Login Screens:</h6>
+            <a class="collapse-item" href="login.html">Login</a>
+            <a class="collapse-item" href="repassword.html">Repassword</a>
+            <a class="collapse-item" href="forgotpassword.html">Forgot Password</a>
+            <!-- <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="#">404 Page</a>
+            <a class="collapse-item" href="#">Blank Page</a> -->
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Chi tiết sách</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -318,7 +374,7 @@
             <img class="card-img-top" src="../image/book.jpg" alt="Card image" style="opacity:0.5">
             <div class="card-img-overlay">
               <h4 class="card-title" style="color: blue;">Tên Sách : {{chitietsach.tenSach}}</h4>
-              <p class="card-text">
+              <p class="card-text" >
               <h5 style="color:cornsilk">
                 <b>Tên Loại : {{chitietsach.tenLoai}} &#160;&#160;&#160; Tác giả : {{chitietsach.tacGia}}</b>
                 <br> <br>
@@ -337,7 +393,7 @@
               </form>
 
               </p> <br>
-              <!-- card câu hỏi về sách -->
+              <!-- card sau -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Câu hỏi về sách</h6>
@@ -368,44 +424,8 @@
                             </a>
                           </td>
                           <td>{{cauHoi}}</td>
-                          <td>{{cauTraLoi}}</td>
-                          <td>
-                            <a href="/sach/deletecauhoi/{{this._id}}"
-                              onclick="return confirm('Are you sure to delete this record ?');"><i
-                                class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
-                          </td>
-                        </tr>
-                        {{/each}}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Bình luận</h6>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                      <thead>
-                        <tr role="row">
-                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                            aria-label="Name: activate to sort column ascending" style="width: 20px;">Tên người dùng</th>
-                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                            aria-label="Position: activate to sort column ascending" style="width: 171.5px;">Nội dung bình luận
-                          </th>                          
-                          <th style="width: 20px;">
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {{#each binhluans}}
-                        <tr>                          
-                          <td>{{tenND}}</td>
-                          <td>{{ndBL}}</td>
-                          <td>
+                          <td>{{cauTraLoi}}</td>              
+                          <td>                            
                             <a href="/sach/deletecauhoi/{{this._id}}"
                               onclick="return confirm('Are you sure to delete this record ?');"><i
                                 class="fa fa-trash fa-lg" aria-hidden="true"></i></a>

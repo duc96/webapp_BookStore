@@ -2,9 +2,38 @@ const express = require('express');
 var router = express.Router();
 const Sach = require("../models/sach.model");
 const CauHoi = require("../models/cauhoi.model");
+const BinhLuan = require("../models/binhluan.model");
+
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/uploads');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+const fileFilter = (req, file, cb) => {
+    // reject a file
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+};
+
+const upload = multer({
+    storage: storage,
+    limits: {
+        fileSize: 1024 * 1024 * 5
+    },
+    fileFilter: fileFilter
+});
 
 router.get('/sach', (req, res) => {
-    res.render('sach/tablesach', { viewTitle: "Thêm sách" });
+    res.render('sach/tablesach');
 });
 
 router.get('/addOrEdit', (req, res) => {
@@ -17,7 +46,7 @@ router.get('/chitietsach', function (req, res) {
 
 });
 
-router.post('/', (req, res) => {
+router.post('/', upload.single("image"), (req, res) => {
 
     if (req.body._id == '') {
         insertRecord(req, res);
@@ -32,28 +61,32 @@ router.get('/:id', (req, res) => {
     Sach.findById(req.params.id, (err, doc) => {
         if (!err) {
             CauHoi.find()
-            .where('maSach').equals(req.params.id)
-            .exec((err, docs1) => {
-                if (!err) {
-                    res.render("sach/chitietsach", {
-                        chitietsach: doc,
-                        cauhois: docs1
-                    });                    
-                }
-                else {
-                    console.log('Lỗi câu hỏi, tìm lại đi :' + err);
-                }
-            });
+                .where('maSach').equals(req.params.id)
+                .exec((err, docs1) => {
+                    if (!err) {
+                        BinhLuan.find().exec((err, bl) => {
+                            if (!err) {
+                                res.render("sach/chitietsach", {
+                                    binhluans: bl,
+                                    chitietsach: doc,
+                                    cauhois: docs1,
+                                });
+                            }
+                        });
+        }
+        else {
+            console.log('Lỗi câu hỏi, tìm lại đi :' + err);
         }
     });
-
+}
+    });
 
 });
 
 function updateRecord(req, res) {
     Sach.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
         console.log(doc);
-        if (!err) { res.redirect('sach/tablesach'); }
+        if (!err) { res.redirect('/sach'); }
         else {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
@@ -77,6 +110,7 @@ function insertRecord(req, res) {
     sach.nhaXuatBan = req.body.nhaXuatBan;
     sach.namXuatBan = req.body.namXuatBan;
     sach.taiBan = req.body.taiBan;
+    sach.hinh = req.file.path;
     sach.save((err, doc) => {
         if (!err)
             res.redirect('/sach');
@@ -163,7 +197,7 @@ router.get('/delete/:id', (req, res) => {
 router.get('/deletecauhoi/:id', (req, res) => {
     CauHoi.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
-            res.redirect("/sach/" +doc.maSach);
+            res.redirect("/sach/" + doc.maSach);
         }
         else { console.log('Error in employee delete :' + err); }
     });

@@ -60,3 +60,11 @@ db.on('erro', console.error.bind(console, 'Mongoose fail:'));
 const sachController = require('./controllers/sach.controler');
 app.use("/sach", sachController);
 
+const HDController = require('./controllers/hoadon.controller');
+app.use("/hoadon", HDController);
+
+const NDController = require('./controllers/nguoidung.controller');
+app.use("/nguoidung", NDController);
+
+const APIController = require('./controllers/API');
+app.use(APIController);
