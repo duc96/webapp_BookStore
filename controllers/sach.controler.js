@@ -64,7 +64,9 @@ router.get('/:id', (req, res) => {
                 .where('maSach').equals(req.params.id)
                 .exec((err, docs1) => {
                     if (!err) {
-                        BinhLuan.find().exec((err, bl) => {
+                        BinhLuan.find()
+                        .where('maSach').equals(req.params.id)
+                        .exec((err, bl) => {
                             if (!err) {
                                 res.render("sach/chitietsach", {
                                     binhluans: bl,
