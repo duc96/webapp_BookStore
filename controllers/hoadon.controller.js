@@ -1,16 +1,12 @@
 const express = require('express');
 var router = express.Router();
-const HoaDon = 
+const HoaDon = require("../models/hoadon.model");
 
 router.get('/', (req, res) => {
-    res.render('hoadon/tablehoadon');
-});
-
-router.get('/', (req, res) => {
-    Sach.find((err, docs) => {
+    HoaDon.find((err, docs) => {
         if (!err) {
             res.render("sach/tablesach", {
-                sachs: docs
+                hoadons: docs
             });
         }
         else {

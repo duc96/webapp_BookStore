@@ -335,6 +335,69 @@
                         <img class="card-img-top" src="../image/book.jpg" alt="Card image" style="opacity:0.5">
                         <div class="card-img-overlay">
                             <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    {{!-- <h6 class="m-0 font-weight-bold text-primary">Tất cả sách</h6> --}}
+                                    <h3><a class="btn btn-secondary" href="/sach/addOrEdit"><i class="fa fa-plus"></i>
+                                            Create
+                                            New</a> Hóa Đơn</h3>
+
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover" id="dataTable" width="100%"
+                                            cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>tên sách</th>
+                                                    <th>tên loại</th>
+                                                    <th>tác giả</th>
+                                                    <th>nhà xuất bản</th>
+                                                    <th>tái bản</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each sachs}}
+
+                                                <tr>
+
+                                                    <td>
+                                                        <a href="/sach/{{this._id}}">
+                                                            {{tenSach}}
+                                                        </a>
+                                                    </td>
+
+                                                    <td>{{tenLoai}}</td>
+                                                    <td>{{tacGia}}</td>
+                                                    <td>{{nhaXuatBan}}</td>
+                                                    <td>{{taiBan}}</td>
+
+
+                                                    <td>
+                                                        <a href="/sach/update/{{this._id}}"><i class="fas fa-pen"
+                                                                aria-hidden="true"></i></a> &nbsp; &nbsp;
+                                                        <a href="/sach/delete/{{this._id}}"
+                                                            onclick="return confirm('Are you sure to delete this record ?');"><i
+                                                                class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                                                    </td>
+                                                </tr>
+
+                                                {{/each}}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{!-- <div class="container">
+                    <div class="card img-fluid" style="width:1200px">
+                        <img class="card-img-top" src="../image/book.jpg" alt="Card image" style="opacity:0.5">
+                        <div class="card-img-overlay">
+                            <div class="card shadow mb-4">
 
                                 <!-- Area Chart -->
                                 <div class="card shadow mb-4">
@@ -353,7 +416,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- /.container-fluid -->
 
             </div>

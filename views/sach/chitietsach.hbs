@@ -331,6 +331,8 @@
                 <h4 class="card-title" style="color: blue;">Thêm câu hỏi và câu trả lời</h4>
                 <input name="cauhoi" type="text" placeholder="nhập câu hỏi"
                   style="border-radius: 5px; margin: 5px; width:500px;"> <br>
+                  <input name="gia" type="text" placeholder="nhập giá tiền"
+                  style="border-radius: 5px; margin: 5px; width:200px;"> <br>
                 <textarea name="cautraloi" placeholder="nhập câu trả lời"
                   style="border-radius: 5px; margin: 5px; width: 300px; height: 100px;"></textarea> <br>
                 <button type="submit" style="border-radius: 10px; margin-left: 10px;"><b><i>Thêm</i></b></button>
@@ -403,7 +405,7 @@
                       <tbody>
                         {{#each binhluans}}
                         <tr>                          
-                          <td>{{tenND}}</td>
+                          <td>{{tenNguoiDung}}</td>
                           <td>{{ndBL}}</td>
                           <td>
                             <a href="/sach/deletecauhoi/{{this._id}}"
