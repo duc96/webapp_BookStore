@@ -1,9 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const NguoiDung = require("./nguoidung.model");
 
-var HoaDonFinalSchema = new mongoose.Schema({
-    tenNguoiDung: {type: String, ref: NguoiDung},
-    hoaDon: {type: mongoose.Schema.Types.Array, require: true}        
+var HoaDonSchema = new mongoose.Schema({
+  tenNguoiDung: { type: String, ref: NguoiDung },
+  hoaDonFinals: { type: mongoose.Schema.Types.Array, require: true },
+  giaTien: { type: Number },
 });
 
-module.exports = mongoose.model('HoaDonFinal', HoaDonFinalSchema);
+module.exports = mongoose.model("HoaDon", HoaDonSchema);
